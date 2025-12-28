@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚗 Car Price Prediction</h1>
+    <p>Predict the resale value of your car instantly</p>
+
+    <form action="/predict" method="post">
+
+    <!-- 🔥 COMPANY -->
+    <label>Company</label>
+    <select name="company" required>
+        {% for c in companies %}
+        <option value="{{ c }}"
+            {% if c == selected_company %}selected{% endif %}>
+            {{ c }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <!-- 🔥 CAR MODEL -->
+    <label>Car Model</label>
+    <select name="car_models" required>
+        {% for m in car_models %}
+        <option value="{{ m }}"
+            {% if m == selected_model %}selected{% endif %}>
+            {{ m }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <!-- 🔥 YEAR -->
+    <label>Year</label>
+    <select name="year" required>
+        {% for y in years %}
+        <option value="{{ y }}"
+            {% if y == selected_year %}selected{% endif %}>
+            {{ y }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <!-- 🔥 FUEL TYPE -->
+    <label>Fuel Type</label>
+    <select name="fuel_type" required>
+        {% for f in fuel_types %}
+        <option value="{{ f }}"
+            {% if f == selected_fuel %}selected{% endif %}>
+            {{ f }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <!-- 🔥 KILOMETERS -->
+    <label>Kilometers Driven</label>
+    <input type="number"
+           name="kilo_driven"
+           value="{{ selected_km }}"
+           required>
+
+    <button type="submit">Predict Price</button>
+</form>
+
+{% if prediction_text %}
+<h2>{{ prediction_text }}</h2>
+{% endif %}
+
+</div>
+
+</body>
+</html>

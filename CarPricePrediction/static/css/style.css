@@ -1,0 +1,148 @@
+/* Premium font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* Background */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #6366f1, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* Glass card */
+.container {
+    width: 460px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title */
+.container h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* Subtitle */
+.container p {
+    text-align: center;
+    font-size: 14px;
+    color: #e5e7eb;
+    margin-bottom: 28px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+/* Inputs & dropdowns */
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus */
+select:focus,
+input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Button */
+button {
+    margin-top: 28px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.5);
+}
+
+/* Result box */
+h2 {
+    margin-top: 28px;
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 14px;
+    animation: pop 0.4s ease;
+}
+
+/* Result animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 520px) {
+    .container {
+        width: 100%;
+        padding: 28px;
+    }
+
+    .container h1 {
+        font-size: 22px;
+    }
+}
